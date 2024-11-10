@@ -150,6 +150,83 @@ Como o nome já sugere, está coluna contém o nome e o sobrenome dos pilotos da
 
 ![06](https://github.com/user-attachments/assets/7e91c233-e90e-456e-b005-f100472132d5)
 
+<br>
+<br>
+
+Como a base de dados veio da origem bem formatada e tratada, não foi preciso fazer muitas etapas de transformação na mesma, este é um cenário semi-ideal. eralmente as bases de dados vêm bem mais sujas para realizarmos um tratamento mais eficiente.
+
+<hr>
+<br>
+<br>
+
+<h1>Relacionamento das tabelas</h1>
+
+Agora com os dados já tratados e carregados no ambiente do Power Bi, tenho que vê se o mesmo criou os relacionamentos automaticamente corretos, e dando uma olhada nos meus relacionamentos vi que ele de fato criou todos corretamente, então não preciso mudar nada nessa parte de relacionamento entre as tabelas.
+Para ficar melhor contextualizado irei mostrar a cardinalidade desses relacionamentos entre as tabelas.
+
+Results (N) > (1) Races (Muitos pra Um) (N, 1)
+
+Results (N) > (1) Drivers (Muitos pra Um) (N, 1)
+
+Results (N) > (1) Constructors (Muitos pra Um) (N, 1)
+
+Races (N) > (1) Circuits (Muitos pra Um) (N, 1)
+
+<br>
+
+![00](https://github.com/user-attachments/assets/0365e283-42dc-4897-8a80-2fb92192a8f9)
+
+<hr>
+<br>
+<br>
+
+<h1>Criação de Medidas</h1>
+
+Após o tratamento dos dados, farei a criação de algumas medidas utilizando a linguagem <b>DAX (Data Analysis Expressions)</b> do próprio Power BI. Isso me ajudará posteriormente na criação dos gráficos.
+
+<br>
+
+Nesta etapa eu faço a criação de uma tabela com o nome de <b>"Medidas"</b>, como o nome já sugere essa tabela terá como função única e exclusivamente organizar as medidas que irei criar ao longo do projeto.
+
+![01](https://github.com/user-attachments/assets/5ecf36ae-0f33-46ed-ae46-3fc277208e66)
+
+<br>
+<br>
+
+A primeira medida que irei criar se chama <b>"Corridas</b> com a finalidade de saber o numero de corridas.
+
+No código eu faço um "DISTINCTCOUNT para me dá os valores únicos da coluna <b>"raceId"</b> da tabela <b>"Results"</b>.
+
+![02](https://github.com/user-attachments/assets/533f6e19-901d-49f9-b823-d7e4eff06acd)
+
+<br>
+<br>
+
+Outra medida que criei se chama <b>"Equipes"</b> com a finalidade de saber a quantidade de equipes.
+
+Utilizando também o DISTINCTCOUNT da coluna <b>"constructorID"</b> da tabela <b>"Results"</b> para me dá os valores distintos (únicos) das equipes.
+
+![03](https://github.com/user-attachments/assets/4bbec303-8137-41d7-8f23-5ffcc95b5786)
+
+<br>
+<br>
+
+A próxima medida criada foi para saber a quantidade de pilotos e se chamará <b>"Pilotos</b>.
+
+Seguindo a mesma lógica das demais utilizo o comando DISTINCTCOUNT para me dá a contagem distinta dos pilotos na coluna <b>"driverID"</b> da tabela <b>"Results"</b>.
+
+![04](https://github.com/user-attachments/assets/85cea776-1802-43ec-9b70-040a3951adf4)
+
+
+
+
+
+
+
+
+
+
+
 
 
 
