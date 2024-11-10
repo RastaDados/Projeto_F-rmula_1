@@ -286,6 +286,10 @@ Após a criação da Coluna Clusterizada acima eu notei que os dados ficaram mui
 
 Recebeu a coluna <b>"year"</b> da tabela <b>"Races"</b>
 
+<br>
+
+Resultado:
+
 ![01](https://github.com/user-attachments/assets/60a64126-5143-4aa9-a223-2c8ce61a54ac)
 
 <hr>
@@ -338,11 +342,17 @@ No próprio gráfico renomiei para seguir o padrão do idioma em português - Br
 
 <br>
 
+Resultado: 
+
 ![03](https://github.com/user-attachments/assets/e0cb2f32-320a-4d3e-896f-644821c850b3)
 
 <br>
 
 Para o gráfico de tabela ficar ainda melhor para uma posterior análise dos dados decidi fazer uma formatação condicional de barra de dados no campo Corridas, pintando os valores positivos em um azul mais claro.
+
+<br>
+
+Resultado
 
 ![04](https://github.com/user-attachments/assets/224fcc17-6d7e-449d-b4fb-fe02f1dac617)
 
