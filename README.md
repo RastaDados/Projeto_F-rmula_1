@@ -288,6 +288,77 @@ Recebeu a coluna <b>"year"</b> da tabela <b>"Races"</b>
 
 ![01](https://github.com/user-attachments/assets/60a64126-5143-4aa9-a223-2c8ce61a54ac)
 
+<hr>
+<br>
+<br>
+
+Agora irei fazer a estilização dos meus gráficos.
+Para poupar tempo e não estilizar gráfico por gráfico eu dou preferência em estilizar todos de uma vez com a opção de temas no Power Bi.
+
+Eu fiz a exportação de um tema já criado em um arquivo .JSON
+
+Após a aplicação do tema, os gráficos ficaram assim:
+
+<br>
+
+![02](https://github.com/user-attachments/assets/6f9693e6-5f4f-4693-ab97-ad7d48a4e832)
+
+<br>
+<br>
+
+<h1>Criação de Gráficos da Página Corridas</h1>
+
+Agora vamos para a criação dos outros gráficos desse dashboard.
+
+<h2>Gráfico de Barras Empilhadas</h2>
+
+Recebeu no eixo <b>"Y"</b> os dados da coluna <b>"country"</b> da tabela <b>"Circuits"</b>
+
+Recebeu no eixo <b>"X"</b> os dados da medida <b>"Corridas"</b>
+
+<h2>Gráfico de Mapa</h2>
+
+No campo Localização recebeu os dados da coluna <b>"country"</b> da tabela <b>"Circuits"</b>
+
+No campo Tamanho da bolha recebeu os dados da medida <b>"Corridas"</b>
+
+<h2>Gráfico de Tabela </h2>
+
+No campo colunas recebeu dados da medida <b>"Corridas"</b>
+
+Também recebeu dados da tabela <b>"Circuits"</b> com as coluans <b>"Country"</b>, <b>"Location"</b> e <b>"Name"</b>
+
+No próprio gráfico renomiei para seguir o padrão do idioma em português - Br
+
+<b>"Name"</b> virou = <b>"Circuito"</b>
+
+<b>"Country"</b> virou = <b>"Estado"</b>
+
+<b>"Location"</b> virou = <b>"País"</b>
+
+<br>
+
+![03](https://github.com/user-attachments/assets/e0cb2f32-320a-4d3e-896f-644821c850b3)
+
+<br>
+
+Para o gráfico de tabela ficar ainda melhor para uma posterior análise dos dados decidi fazer uma formatação condicional de barra de dados no campo Corridas, pintando os valores positivos em um azul mais claro.
+
+![04](https://github.com/user-attachments/assets/224fcc17-6d7e-449d-b4fb-fe02f1dac617)
+
+<br>
+<br>
+
+<h1>Criação do Tooltip Para a Página de Corridas</h1>
+
+
+
+
+
+
+
+
+
 
 
 
