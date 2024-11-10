@@ -215,7 +215,90 @@ A próxima medida criada foi para saber a quantidade de pilotos e se chamará <b
 
 Seguindo a mesma lógica das demais utilizo o comando DISTINCTCOUNT para me dá a contagem distinta dos pilotos na coluna <b>"driverID"</b> da tabela <b>"Results"</b>.
 
-![04](https://github.com/user-attachments/assets/85cea776-1802-43ec-9b70-040a3951adf4)
+![04](https://github.com/user-attachments/assets/62960bb9-5e02-4e28-905e-b59b0d63d25b)
+
+<br>
+<br>
+
+E por fim, a última medida criada foi para saber a quantidade de temporadas e se chamará <b>"Temporadas"</b>.
+
+Para ter uma contagem distinta das temporadas eu fiz um DISTINCTCOUNT da coluna "year" que está na tabela "Races".
+
+![05](https://github.com/user-attachments/assets/00dcd7f2-6308-4b94-bea1-e10f91304e3c)
+
+<hr>
+<br>
+<br>
+
+<h1>Página Inicial</h1>
+
+A primeira página que irei criar no projeto será a HomePage (Página Inical), irei criar todas as páginas na minha linguagem natal (Português - br)
+
+Será uma página bem básica.
+Começarei trocando o background da página (vale lembrar que todas as imagens e telas de fundo desse projeto foram criados no Figma) e logo após irei criar alguns botões com a função de ação para eles terem a finalidade de navegar pelas páginas do Dashboard.
+
+Depois de todas as estilizações e de ter adicionado todos os botões, a Página Inicial ficou o seguinte aspecto:
+
+![01](https://github.com/user-attachments/assets/03ecb235-dde0-4cd2-991b-7833330ce794)
+
+<hr>
+<br>
+<br>
+
+<h1>Corridas</h1>
+
+Agora vou criar a página de corridas.
+
+Para começar a criação dos dashboards primeiramente mudei o fundo da minha área de trabalho para criar os dashboards com o fundo já aplicado, isso facilita e muito na hora de organizar os gráficos nos seus respectivos lugares
+
+Ressaltando: Esses fundos e todas as imagens utilizadas nesse projeto foram criadas no Programa "Figma".
+
+![00](https://github.com/user-attachments/assets/2c7a688b-4bda-4071-9fa6-335e781a0cf5)
+
+<br>
+<br>
+
+<h2>Adicionando os gráficos na página de Corridas</h2>
+
+Nessa parte de criação dos gráficos, eu fui colocando cada gráfico no seu respectivo local de acordo com a tela de fundo que adicionei na etapa anterior.
+
+Os gráficos criados com seus respectivos dados foram os seguintes:
+
+<h3>Gráfico de Cartões:</h3>
+
+Corridas recebeu os dados da medida criada chamada <b>"Corridas"</b>
+
+Temporadas recebeu os dados da medida criada chamada <b>"Temporadas"</b>
+
+Pilotos recebeu os dados da medida criada chamada <b>"Pilotos"</b>
+
+Equipes recebeu os dados da medida criada chamada <b>"Equipes"</b>
+
+<h3>Gráfico de Coluna Clusterizado</h3>
+
+Recebeu no eixo <b>"X"</b> os dados da medida <b>"Corridas"</b>
+
+Recebeu no eixo <b>"Y"</b> os dados da coluna <b>"year"</b> da tabela <b>"Races"</b>
+
+Após a criação da Coluna Clusterizada acima eu notei que os dados ficaram muito ruim de visualizar pois tinha bastante informações, por isso vi necessário a criação de um gráfico de <b>"Segmentação de Dados"</b> que servirá como filtro justamente para filtrar os dados e mostrar apenas os valores relevantes para uma posterior análise dos mesmos.
+
+<h3>Gráfico Segmentação de Dados</h3>
+
+Recebeu a coluna <b>"year"</b> da tabela <b>"Races"</b>
+
+![01](https://github.com/user-attachments/assets/60a64126-5143-4aa9-a223-2c8ce61a54ac)
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
