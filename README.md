@@ -332,7 +332,7 @@ No campo colunas recebeu dados da medida <b>"Corridas"</b>
 
 Também recebeu dados da tabela <b>"Circuits"</b> com as coluans <b>"Country"</b>, <b>"Location"</b> e <b>"Name"</b>
 
-No próprio gráfico renomiei para seguir o padrão do idioma em português - Br
+No próprio gráfico renomeie para seguir o padrão do idioma em português - Br
 
 <b>"Name"</b> virou = <b>"Circuito"</b>
 
@@ -408,6 +408,341 @@ E para finalizar vou adicionar a imagem da bandeira do país de cada pista que f
 <br>
 
 <h2>Voltando para a criação de gráficos na página de corridas</h2>
+
+Agora preciso criar um filtro para mostrar apenas as equipes vencedores de cada pista, e trazer isso em um rank com apenas os top 5 vencedores.
+
+Na aba filtro do PowerBi ele me dá apenas a opção ed filtrar por colocação, mas não me dá a opção de trazer o Rank com as Top 5 equipes ganhadoras de cada pista, para isso então precisei criar uma nova medida.
+
+A medida que vou criar é para obter a quantidade de vitórias de cada equipe.
+
+Utilizo a função CALCULATE para filtrar a medida de corridas, filtrando ela na coluna <b>"position"</b> da tabela <b>"Results"</b>, depois eu uso o sinal de = 1 para trazer apenas os primeiros colocados.
+
+![08](https://github.com/user-attachments/assets/4daba07a-f9d0-4bc3-b638-8c0640757e19)
+
+<br>
+<br>
+
+Agora sim vou utilizar a aba filtros do PowerBi, justamente para colocar minha medida no campo de filtros e filtrar pelas 5 equipes que mais ganharam.
+
+Note que meu filtro está bugado todo em branco, já fechei e abri o PowerBi diversas vezes, mas apenas nesse arquivo em específico que ele buga, como não está me atrapalhando na criação, eu deixei bugado até porque não achei uma solução para o problema.
+
+![09](https://github.com/user-attachments/assets/23129a75-2437-47e5-941d-805fb6184500)
+
+<br>
+<br>
+
+Após criado o Tooltip, basta eu ir no meu Gráfico de Tabela da página 1 que criei e adicionar o Tooltip.
+
+Agora ao passar o mouse em cima da informação de pista, ele trás a informação do Tooltip contendo o nome da pista, imagem da pista selecionada,as 5 equipes que mais ficaram em primeiro lugar em cada pista selecionada e a bandeira do país da respectiva pista.
+
+![10](https://github.com/user-attachments/assets/80d2bc85-88aa-4443-9305-42bc3676a53e)
+
+<hr>
+<br>
+<br>
+
+<h1>Página de Corridas</h1>
+
+Reaproveitei alguns gráficos da página de Corridas e adicionei nesta página.
+
+<br>
+
+<h2>Criação dos gráficos</h2>
+
+Agora vamos para a criação dos gráficos exclusivos da página de <b>"Equipes"</b>.
+
+Crio um Gráfico de Tabelas, para mostrar o nome da equipe e a quantidade de vitórias que cada uma teve. Faço isso reaproveitando a formatação da tabela da página de <b>"Corridas"</b>.
+
+Em colunas eu uso os dados de:
+
+Tabela <b>"Cosntructors"</b> Coluna <b>"name"</b>
+
+Medida <b>"Corridas"</b>
+
+Medida <b>"Vitórias"</b>
+
+![02](https://github.com/user-attachments/assets/daa6c8f9-efe5-47b7-be46-d72fb81f6c36)
+
+<br>
+<br>
+
+<h1>Criação do Tooltip da Página Equipes</h1>
+
+Assim como na primeira página <b>"Corridas"</b>, também irei fazer um tooltip para as páginas <v>"Equipes".
+
+Começando com a criação do tooltip:
+
+Criei uma nova página com o nome Tooltip Equipes para usar essa página exclusivamente como um Tooltip (Dica de Ferramentas).
+
+Primeiro faço a mudança do Background e personalizo o tamanho da página para 400 x 560.
+
+![03](https://github.com/user-attachments/assets/c03ac094-40da-4766-82a5-0fd49435893c)
+
+<br>
+<br>
+
+Vamos fazer a criação de um gráfico para mostrar a imagem do construtor (equipe) no tooltip, porém para isso vamos ter que mudar a categoria dos dados da coluna <b>"car_url"</b> da tabela <b>"Constructors"</b>, ela está categorizada inicialmente como "Não Categorizado" e fiz a mudança para "URL da Imagem", justamente para utilizar os dados dessa coluna como imagem.
+
+![04](https://github.com/user-attachments/assets/778595c8-5df6-4517-92ba-0cba1f301f81)
+
+<br>
+<br>
+
+Após essa transformação, agora eu preciso do gráfico que baixei dos gráficos externos do PowerBi que se chama "Simple Image", justamente para utilizar essa coluna <b>"car_url"</b> como uma imagem dos construtores (equipe).
+
+Agora vamos para a criação dos demais gráficos do Tooltip:
+
+<h2>Gráfico Simple Image</h2>
+
+No campo Image URL adiciono a coluna <b>"car_url"</b> da tabela <b>"Constructors"</b>
+
+<h2>Gráfico de Cartão</h2>
+
+No campo Campos adiciono a coluna <b>"name"</b> da tabela <b>"Constructors"</b>
+
+![05](https://github.com/user-attachments/assets/9fbc641d-6e04-4d9c-8d54-f5d9376ba900)
+
+<br>
+<br>
+
+Agora para a criação dos dois gráficos que faltam vou precisar criar uma medida chamada de Total Pontos, como o nome já sugere esta medida é a soma dos Pontos totais.
+
+![06](https://github.com/user-attachments/assets/191af797-c802-4eae-a9ba-bc5704899e0a)
+
+<br>
+<br>
+
+Agora vou criar os dois gráficos que restam.
+
+<h2>Gráfico de colunas clusterizado</h2>
+
+No eixo <b>"X"</b> adiciono a coluna <b>"fullname"</b> da tabela <b>"Drivers"</b>
+
+No eixo <b>"Y"</b> adiciono a medida recém criada <b>"Total Pontos"</b>
+
+<h2>Gráfico de colunas clusterizado</h2>
+
+No eixo <b>"X"</b> adiciono a coluna <b>"name"</b> da tabela <b>"Races"</b>
+
+No eixo <b>"Y"</b> adiciono a medida recém criada <b>"Total Pontos"</b>
+
+![08](https://github.com/user-attachments/assets/0f163224-c512-4013-b2c7-603493a69b04)
+
+<br>
+<br>
+
+Agora para terminar meu Tooltip vou fazer um filtro para buscar o Top 3 Pilotos e o Top 3 Grand Pix nos dois gráficos criados.
+
+Aproveio e já faço a estilização das cores dos gráficos.
+
+![09](https://github.com/user-attachments/assets/a90d58a7-abe6-4f1a-84c0-5888ec6f2c66)
+
+<br>
+<br>
+
+<h2>Resultado do Tooltip:</h2>
+
+![09](https://github.com/user-attachments/assets/c440a238-480e-4515-af9e-2694c21067f8)
+
+<br>
+<br>
+
+<h1>Voltando Para a Criação dos Gráficos da Página Equipes</h1>
+
+Voltando para nossa página de Equipes eu preciso criar algumas medidas para colocar na minha tabela.
+
+A primeira medida criada será a <b>"Corridas 1st"</b>, como o nome sugere vou pegar as corridas que as equipes saíram em primeiro lugar.
+
+Filtro a coluna com a função CALCULATE, com a função COUNTROWS faço as contagens da linha da tabela <b>"Results"</b>, e trago todas as posições da coluna <b>"position"</b> que seja igual a 1 (=1), primeiro lugar.
+
+![10](https://github.com/user-attachments/assets/130b7e99-c2bb-4ed0-b4cb-c1bc35f58b95)
+
+<br>
+<br>
+
+A segunda medida a ser criada vai ser a <b>"Podium"</b> e terá como função exibir o podium de primeiro, segundo e terceiro lugar.
+
+Porém antes de criar esta medida eu fiz a criação de mais duas medidas complementares, que será a <b>"Corridas 2st"</b> e <b>"Corridas 3st"</b>, justamente para colocá-las na medida de <b>"Podium"</b>, ambas as medidas são iguais a medida criada de <b>"Corridas 1st"</b> so múdando o numero da colocação na medida.
+
+Após a criação dessas medidas, vou criar a medida <b>"Podium"</b>
+
+A medida é bem simples, é concatenação das medidas criadas de Primeiro, Segundo e Terceiro lugar.
+
+![11](https://github.com/user-attachments/assets/bc008a90-9300-451e-a509-d5f88a2856be)
+
+<br>
+<br>
+
+Agora para finalizar os dados da tabela vamos criar mais uma medida, essa medida se chamará <b>"Rank Total Pontos"</b>, e ela fará justamente um rank de todas as equipes de acordo com os pontos somados.
+
+Traremos a função RANKX, e dentro colocaremos uma função ALL para retirar os filtros e trazer todos os dados da tabela <b>"Constructors"</b>, e assim faremos o rank das equipes utilizando a medida Total Pontos.
+
+![12](https://github.com/user-attachments/assets/1a5d018c-fcaf-45e2-8180-99830ec7400d)
+
+<br>
+<br>
+
+Agora basta adicionar os campos ao gráfico de Tabela já renomeando elas para o Português - BR
+
+No campo colunas adicionei os seguintes dados:
+
+Coluna <b>"name"</b> da tabela <b>"Constructors"</b> - Renomeie para <b>"Equipe"</b>
+
+Coluna <b>"nationality"</b> da tabela <b>"Constructors"</b> - renomeie para <b>"Nacionalidade"</b>
+
+Medida <b>"Corridas"</b>
+
+Medida <b>"Rank Total Pontos (Equipe)"</b> - renomeie para <b>"Rank (pts)"</b>
+
+Medida <b>"Total Pontos"</b> - renomeie para <b>"Pontos"</b>
+
+Medida <b>"Corridas 1st"</b> - renomeie para <b>"Vitórias"</b>
+
+Medida <b>"Podiums"</b> - renomeie para <b>"Pódiums"</b>
+
+<br>
+
+Após adicionar todos os dados, eu preciso fazer a estilização da Tabela criada.
+
+Fiz a criação da formatação condicional dos dados e mudei algumas coisas na parte de estilização da tabela.
+
+Por fim a tabela ficou desta forma:
+
+![14](https://github.com/user-attachments/assets/b881eecc-1110-4409-96b0-68b540c6430f)
+
+<br>
+<br>
+
+Agora vou fazer todas as criações de gráficos da página, e posteriormente a estilização de todos.
+
+Este gráfico é para saber o Número de podiums, vitórias e pontos por temporada.
+
+Agora vamos criar um gráfico de Colunas agrupadas e linha com os seguintes dados
+
+No eixo <b>"X"</b> vou adicionar a coluna <b>"year"</b> da tabela <b>"Races"</b>
+
+No eixo <b>"Y"</b> vou adicionar a medida <b>"Podium"</b>
+
+No eixo <b>"Y"</b> vou adicionar a medida <b>"Corridas 1st"</b> e Renomear para <b>"Vitórias"</b>
+
+No eixo <b>"Y"</b> da linha vou adicioanr a medida <b>"Total Pontos"</b> e Renomear para <b>"Pontos"</b>
+
+Para complementar este gráfico vou criar um Segmentador de dados para fazer o filtro das equipes somente neste gráfico, sem afetar os demais gráficos.
+
+![15](https://github.com/user-attachments/assets/dd8f608d-d995-45f4-a682-bd2289c533aa)
+
+<br>
+<br>
+
+Agora farei a criação de um gráfico de barras empilhadas.
+
+Este gráfico irá me mostrar os pódiums por equipe
+
+Já farei após a inserção dos dados a estilização do gráfico.
+
+No eixo <b>"Y"</b> irei adicionar a coluna <b>"name"</b> da tabela <b>"Constructors"</b>
+
+No eixo <b>"X"</b> adcionarei a Medida <b>"Corridas 1st"</b> - Renomeando para 1º Lugar
+
+No eixo <b>"X"</b> adcionarei a Medida <b>"Corridas 2st"</b> - Renomeando para 2º Lugar
+
+No eixo <b>"X"</b> adcionarei a Medida <b>"Corridas 3st"</b> - Renomeando para 3º Lugar
+
+Por fim o gráfico com o seguinte aspecto:
+
+![16](https://github.com/user-attachments/assets/7316f042-40ab-4fcb-9d6d-fbae5538dcdb)
+
+<br>
+<br>
+
+Agora vou criar um Gráfico de Tabelas para exibir a Equipe vencedora por Grand Pix.
+
+Após a inserção dos valores vou fazer a estilização do gráfico.
+
+No campo Colunas vou adicionar os seguintes valores:
+
+Vou adicionar a coluna <b>"year"</b> da tabela <b>"Races"</b> - Renomeie para "Ano"
+
+Vou adicionar a coluna <b>"name"</b> da tabela <b>"Races"</b> - Renomeie para "Grand Pix"
+
+Após a criação e estilização, o gráfico ficou dessa forma:
+
+![17](https://github.com/user-attachments/assets/39814c09-ef46-4f60-a805-f486565ce301)
+
+<hr>
+<br>
+<br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
