@@ -356,10 +356,70 @@ Resultado
 
 ![04](https://github.com/user-attachments/assets/224fcc17-6d7e-449d-b4fb-fe02f1dac617)
 
+<hr>
 <br>
 <br>
 
 <h1>Criação do Tooltip Para a Página de Corridas</h1>
+
+Agora vamos fazer a criação do Tooltip para utilizar na página de carros.
+
+Para criar o Tolltip de Corridas eu tive que criar uma nova página no ambiente PowerBi com o nome de "Tolltip Corridas", esta página será de uso único e exclusivo para o indicador de Tooltip (Será usada como uma dica de ferramenta) que será adicionado ao gráfico de Tabelas.
+
+Primeiro passo na criação do Tooltip é importar o Background do mesmo.
+
+![05](https://github.com/user-attachments/assets/a38c88d1-ec55-488c-8e59-9b3863996084)
+
+<br>
+<br>
+
+<h2>Agora fiz a criação dos seguintes gráficos:</h2>
+
+<h2>Gráfico de Cartão</h2>
+
+Recebeu em Valores a coluna <b>"name"</b> da tabela <b>"Circuits"</b>
+
+Agora este é um passo muito <b>importante</b> na criação do Tooltip, colocarei em um gráfico a imagem de cada pista de fórmula 1 presente na base de dados. Para isso tive que mudar o formato de uma coluna específica.
+
+A coluna é a <b>"picture_url"</b> da tabela <b>"Circuits"</b>. Os dados dessa coluna são links (urls) das imagens da pista, então eu tive que mudar a categoria dos dados de "Não categorizado" para "URL da Imagem".
+
+![06](https://github.com/user-attachments/assets/c15b7c99-f4cc-4f77-9adf-43f1dfc68be1)
+
+<br>
+<br>
+
+Para utilizar esta imagem em algum gráfico (visual) dentro do Power Bi, não se tem um visual que se adapte bem com imagens, todos ficam mal formatados ou com Bug's, então a solução será importar da loja de visuais do prróprio PowerBi um visual que atenda á minha necessidade.
+
+O viusal personalizado escolhido foi o "Simple Image" que é gratuito para adquiri-lo.
+
+Além da imagem eu também introduzi um outro gráfico ao lado.
+
+<h2>Gráfico de Barras Empilhadas:</h2>
+
+No eixo <b>"Y"</b> adicionei a coluna <b>"name"</b> da tabela <b>"Constructors"</b>
+No eixo <b>"X"</b> adicionei a medida <b>"Corridas"</b>
+
+E para finalizar vou adicionar a imagem da bandeira do país de cada pista que for selecionada.
+
+![07](https://github.com/user-attachments/assets/8d4275cd-71e6-4d89-82a4-198bcacbffc1)
+
+<hr>
+<br>
+<br>
+
+<h2>Voltando para a criação de gráficos na página de corridas</h2>
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
