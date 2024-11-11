@@ -5,6 +5,10 @@
 
 Este projeto foi desenvolvido com o intuito de realizar análises e retirar insights dos dados aqui presentes. É uma base de dados bem antiga contendo informações do ano de 1950 até o ano de 2022.
 
+<br>
+
+<h2><a href="https://app.powerbi.com/groups/me/reports/3b9286e5-6d95-481f-b7ec-9c0c6a77f854/88dd1ee162012bda8cf9?experience=power-bi"> Acesse o Dashboard aqui </a></h2>
+
 <hr>
 <br>
 
@@ -672,6 +676,215 @@ Após a criação e estilização, o gráfico ficou dessa forma:
 <hr>
 <br>
 <br>
+
+<h1>Página Pilotos</h1>
+
+Com as minhas Páginas criadas "Corridas" e "Equipes", facilita e muito a criação dessa minha última página, pois eu reaproveito gráficos que utilizei nas página criadas anteriormente e que também irei utilizar nesta página.
+
+Então eu copio e colo com a mesma formatação os gráficos de uma página para outra, e ativo a sincronização entre elas, ou seja, se eu filtrar algo na página "Corridas" e "Equipes" esses gráficos que eu trouxe para a página "Pilotos" também serão afetados pelo filtro.
+
+![01](https://github.com/user-attachments/assets/47d42904-f1c0-4172-9975-f92c1841cad4)
+
+<br>
+<br>
+
+<h1>Criação dos Gráficos da Página Pilotos</h1>
+
+Aproveito a criação das Tabelas das páginas anteriores e trago para a minha página atual <b>SEM</b> a sincronização ativa entre os gráficos.
+
+No gráfico de Tabela adiciona os seguintes dados na aba colunas:
+
+Tabela <b>"Drivers"</b> trago a coluna <b>"fullName"</b>
+
+Medidas trago a medida <b>"Corridas"</b>
+
+Medidas trago a medida <b>"Vitórias"</b>
+
+![02](https://github.com/user-attachments/assets/7ef95455-b11a-46ae-aab5-34998b675e15)
+
+<hr>
+<br>
+<br>
+
+<h1>Ciração do Tolltip Para a Página Pilotos</h1>
+
+Agora vamos criar o tooltip para a tabela da página pilotos.
+
+Crio uma página com o nome Tooltip Pilotos para usar essa página como uma Dica de Ferramenta.
+
+Primeiro faço a mudança do Background e personalizo o tamanho da página para 400 x 560.
+
+Logo após faço todas as modificações no Tooltip.
+
+No fim, o Tooltip ficou dessa forma:
+
+![03](https://github.com/user-attachments/assets/e7df105d-3227-4b63-ba00-15f15bafe049)
+
+<br>
+<br>
+
+Agora para utilizar um gráfico com uma coluna em formato de URL da Imagem preciso mudar a categorização de dados da coluna <b>"picture_url"</b> da tabela <b>"Drivers"</b> que está categorizada como "Não Categorizado" e tranformá-lo para "URL da Imagem".
+
+![04](https://github.com/user-attachments/assets/56d26f6a-9bed-4533-b823-f8cc5edc2be7)
+
+<br>
+<br>
+
+Após essa transformação, eu preciso do gráfico que baixei dos gráficos externos do PowerBi que se chama "Simple Image", justamente para utilizar essa coluna <b>"picture_url"</b> como uma imagem dos pilotos.
+
+Após isso vou criar mais alguns gráficos de cartões com os dados que preciso para finalizar o tolltip.
+
+Após tudo finalizado o tooltip ficou da seguinte forma:
+
+![05](https://github.com/user-attachments/assets/a88abc67-0186-4768-ad37-744edf08508e)
+
+<hr>
+<br>
+<br>
+
+<h1>Voltando Para a Criação dos Gráficos da Página Pilotos</h1>
+
+Agora vamos para as criações do gráfico da página Pilotos.
+
+Para adicionar os dados na Tabela eu criei uma nova medida, essa medida servirá para mostrar a pontuação total de cada piloto.
+
+Para criação da medida chamada de <b>"Rank Total Pontos (Piloto")</b> usei a função RANKX, dentro da RANKX usei uma ALL para puxar os dados de toda a tabela <b>"Drivers"</b>, e utilizao a medida <b>"Total Pontos"</b> para fazer o rank das posições dos pilotos.
+
+![06](https://github.com/user-attachments/assets/7557b33f-c5fd-48f7-a29e-bdb966841fd0)
+
+<br>
+<br>
+
+Vou criar um gráfico de tabelas para exibir os detalhes dos pilotos.
+
+Logo após farei as estilizações necessárias e a formatação de dados.
+
+<h2>Gráfico de Tabela:</h2>
+
+Vou adicionar no campo Colunas os seguintes dados
+
+Adicionei a Coluna <b>"fullname"</b> da tabela <b>"Drivers"</b> - Renomeie para "Piloto"
+
+Adicionei a Coluna <b>"nationality"</b> da tabela <b>"Drivers"</b> - Renomeie para "Nacionalidade"
+
+Adicionei a Medida <b>"Corridas"</b>
+
+Adicionei a Medida <b>"Rank Total Pontos (Piloto)"</b> - Renomeie para "Rank"
+
+Adicionei a Medida <b>"Total Pontos"</b> - Renomeie para "Pontos"
+
+Adicionei a Medida <b>"Corridas 1st"</b> - Renomeie para "Vitórias"
+
+Após as estilizações e os dados adicionados, a tabela ficou da seguitne forma:
+
+![07](https://github.com/user-attachments/assets/669ea6b8-9288-4f9c-9482-bc93dace82f2)
+
+<br>
+<br>
+
+Agora vou criar o gráfico de colunas agrupadas e linha.
+
+Este gráfico servirá para exibir o Número de pódiums, vitórias e pontos por temporada
+
+Agora vou adicionar os seguintes dados no gráfico:
+
+No eixo <b>"X"</b> vou adicionar a coluna <b>"year"</b> da tabela <b>"Races"</b>
+
+No eixo <b>"Y"</b> vou adicionar a medida <b>"Podium"</b>
+
+No eixo <b>"Y"</b> vou adicionar a medida <b>"Corridas 1st"</b> - Renomeie para "Vitória"
+
+No eixo <b>"Y"</b> da linha adicionei a medida <b>"Total Pontos"</b> - Renomeie para "Pontos"
+
+Também crio um gráfico de Segmentação de dados para filtrar por piloto , apenas o gráfico criado acima será influênciado pelo filtro.
+
+Por fim, fiz todas as estilizações nos gráfico ficou da seguinte forma: 
+
+![08](https://github.com/user-attachments/assets/47f4847d-b517-43a3-ae90-4dca3624f94d)
+
+<br>
+<br>
+
+Agora criei o gráfico de barras empilhadas.
+
+Nesse gráfico tera informações sobre Podiums por piloto.
+
+No eixo <b>"Y"</b> adicionei a coluna <b>"fullname"</b> da tabela "Drivers"
+
+No eixo <b>"X"</b> adicionei a medida <b>"Corridas 1st"</b> - Renomeie para 1º Lugar
+
+No eixo <b>"X"</b> adicionei a medida <b>"Corridas 2st"</b> - Renomeie para 2º Lugar
+
+No eixo <b>"X"</b> adicionei a medida <b>"Corridas 3st"</b> - Renomeie para 3º Lugar
+
+Após todas as estilizações e os dados adicionados, o gráfico ficou da seguinte forma:
+
+![09](https://github.com/user-attachments/assets/69ffdb61-dc5f-4bef-8653-789905c422e0)
+
+<br>
+<br>
+
+Agora vou adicionar o último gráfico da página Pilotos
+
+Irei adicionar um gráfico de Tabela para exibir as equipes vencedoras por Grand Prix
+
+Adicionei os seguintes dados no campo Colunas da Tabela:
+
+Adicionei a coluna <b>"year"</b> da tabela <b>"Races"</b> - Renomeie para "Ano"
+
+Adicionei a coluna <b>"name"</b> da tabela <b>"Races"</b> - Renomeie para "Grand Pix"
+
+Após as estilizações e os dados adicionados, o gráfico fiou assim:
+
+![10](https://github.com/user-attachments/assets/a0231a8d-afe0-422c-beb5-f87ae9756d2f)
+
+<hr>
+<br>
+<br>
+
+<h1>Fim do Projeto</h1>
+
+Cheguei ao fim do projeto, com todas as páginas, Tooltips, filtros, segmentadores, indicadores, KPIS, gráficos.
+
+E com todas essas informações, os gestores que tomam decisões estratégicas poderam visualizar os principais dados filtrados para assim terem uma melhor tomada de decisão.
+
+<br>
+
+<h2><a href="https://app.powerbi.com/groups/me/reports/3b9286e5-6d95-481f-b7ec-9c0c6a77f854/88dd1ee162012bda8cf9?experience=power-bi"> Acesse o Dashboard aqui </a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
