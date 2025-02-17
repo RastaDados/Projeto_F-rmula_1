@@ -1,4 +1,4 @@
-<h1>Projeto Fórmula 1</h1>
+<h1>Análise Geral da Fórmula 1</h1>
 
 <hr>
 <br>
