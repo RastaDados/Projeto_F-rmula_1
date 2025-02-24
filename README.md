@@ -7,7 +7,7 @@ Este projeto foi desenvolvido com o intuito de realizar análises e retirar insi
 
 <br>
 
-<h2><a href="https://app.powerbi.com/groups/me/reports/3b9286e5-6d95-481f-b7ec-9c0c6a77f854/88dd1ee162012bda8cf9?experience=power-bi"> Acesse o Dashboard aqui </a></h2>
+<h2><a href="https://app.powerbi.com/view?r=eyJrIjoiNzliZjc2YjctYjE0OS00NWViLTlmNjItODE5MzNiODRjYTY5IiwidCI6IjBjM2IyYzljLWVlYTctNDJlZi04YTYzLTcwOWIyNjU5NzYxOCJ9"> Acesse o Dashboard aqui </a></h2>
 
 <hr>
 <br>
